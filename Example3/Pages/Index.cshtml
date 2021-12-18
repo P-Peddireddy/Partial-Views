@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@using Example3.Models
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Danh sách film</h1>
+
+    @foreach(var item in Model.Films)
+    {   
+        <div class="row">
+            @{ await Html.RenderPartialAsync("ProductPartial", item); }
+        </div>
+    }
+</div>
